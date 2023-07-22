@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	util "member-notification/internal"
 	"os"
 	"os/signal"
 	"syscall"
@@ -19,7 +20,7 @@ func main() {
 	}
 
 	configFile := os.Args[1]
-	conf := ReadConfig(configFile)
+	conf := util.ReadConfig(configFile)
 	conf["group.id"] = "kafka-go-getting-started"
 	conf["auto.offset.reset"] = "earliest"
 
